@@ -1,4 +1,4 @@
-package com.jesusruiz.countrypedia.views.curriculum
+package com.jesusruiz.countrypedia.views.curriculum.education
 
 
 import androidx.compose.foundation.layout.Column
@@ -18,7 +18,12 @@ fun EducationView(modifier: Modifier = Modifier){
         Text("Educación",
             modifier = Modifier.padding(vertical = 10.dp),
             style = MaterialTheme.typography.titleMedium)
-        
+        EducationItem(modifier = Modifier.padding(vertical = 5.dp),title = "Diplomado en diseño y programación de apps",
+            date = "2024-2025", description = "Por la universidad Anahuac")
+        EducationItem(modifier = Modifier.padding(vertical = 5.dp),title = "Ing. en desarrrollo de software interactivos",
+            date = "2020-2024", description = "Por la universidad Amerike, egresado con promedio de 9.6")
+        EducationItem(modifier = Modifier.padding(vertical = 5.dp),title = "Unreal Echo Training By Amber México",
+            date = "2021-2022", description = "Unreal Engine Course")
     }
 }
 
