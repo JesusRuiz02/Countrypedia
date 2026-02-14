@@ -1,6 +1,8 @@
 package com.jesusruiz.countrypedia.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -11,6 +13,7 @@ import com.jesusruiz.countrypedia.viewmodels.CountryViewModel
 import com.jesusruiz.countrypedia.views.countries.CountryView
 import com.jesusruiz.countrypedia.views.countries.HomeCountryView
 import com.jesusruiz.countrypedia.views.curriculum.CurriculumView
+import dagger.hilt.android.lifecycle.HiltViewModel
 
 sealed class Screen(val route: String){
     data object CurriculumView :Screen("Curriculum")
@@ -30,15 +33,21 @@ fun NavManager(){
 
         navigation(route = "countries_graph", startDestination = Screen.CountryHomeView.route){
             composable(Screen.CountryHomeView.route) {
-
-                val countryViewModel: CountryViewModel = CountryViewModel()
+                backStackEntry ->
+                val parentEntry = remember(backStackEntry){
+                    navController.getBackStackEntry("countries_graph")
+                }
+                val countryViewModel: CountryViewModel = hiltViewModel(parentEntry)
                 HomeCountryView(navController, countryViewModel)
             }
             composable(Screen.CountryView.route,
                 arguments = listOf(navArgument("countryName"){type = NavType.StringType})
             ) {
                     backstackEntry ->
-                val countryViewModel = CountryViewModel()
+                val parentEntry = remember(backstackEntry){
+                    navController.getBackStackEntry("countries_graph")
+                }
+                val countryViewModel: CountryViewModel = hiltViewModel(parentEntry)
                 val countryName = backstackEntry.arguments?.getString("countryName")?: ""
                 CountryView(navController = navController, country = countryName, countryViewModel = countryViewModel )
             }
