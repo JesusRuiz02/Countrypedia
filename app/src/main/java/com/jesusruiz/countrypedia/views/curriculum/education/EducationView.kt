@@ -16,7 +16,7 @@ import com.jesusruiz.countrypedia.ui.theme.CountrypediaTheme
 fun EducationView(modifier: Modifier = Modifier){
     Column(modifier = modifier) {
         Text("Educación",
-            modifier = Modifier.padding(vertical = 10.dp),
+            modifier = Modifier.padding(vertical = 10.dp, horizontal = 5.dp),
             style = MaterialTheme.typography.titleMedium)
         EducationItem(modifier = Modifier.padding(vertical = 5.dp),title = "Diplomado en diseño y programación de apps",
             date = "2024-2025", description = "Por la universidad Anahuac")

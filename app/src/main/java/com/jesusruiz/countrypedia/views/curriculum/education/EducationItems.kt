@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jesusruiz.countrypedia.ui.theme.CountrypediaTheme
+import com.jesusruiz.countrypedia.views.curriculum.DescriptionItem
 
 @Composable
 fun EducationItem(modifier: Modifier = Modifier, title: String = "Universidad", date: String = "2022-2025", description: String = "Anahuac"){
@@ -35,16 +36,7 @@ fun EducationItem(modifier: Modifier = Modifier, title: String = "Universidad", 
                 color = Color.Gray
             )
         }
-        Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Icon(modifier = Modifier
-                .size(20.dp)
-                .padding(5.dp),
-                imageVector = Icons.Default.Circle,
-                contentDescription = "Linkedin Icon"
-            )
-            Text(text = description, modifier = Modifier.padding(horizontal = 5.dp))
-        }
-
+        DescriptionItem(description = description)
 
     }
 }
