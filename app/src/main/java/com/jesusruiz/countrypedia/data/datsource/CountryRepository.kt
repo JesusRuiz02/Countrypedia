@@ -5,7 +5,7 @@ import com.jesusruiz.countrypedia.utils.Result
 
 interface CountryRepository {
 
-    suspend fun getCountries(): Result<List<CountryModel>>
+    suspend fun getCountryByName(countryName: String): Result<CountryModel>
 
 
 }
