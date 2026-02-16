@@ -1,8 +1,10 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
+    kotlin("kapt")
 }
 
 android {
@@ -40,14 +42,20 @@ android {
     buildFeatures {
         compose = true
     }
-    packaging{
+   /* packaging{
         resources{
             excludes += "/META-INF/gradle/incremental.annotation.processors"
         }
-    }
+    }*/
 }
 
 dependencies {
+    kapt(libs.hiltCompiler)
+    implementation(libs.hilt)
+    implementation(libs.hiltCompose)
+
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -63,11 +71,11 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation(libs.hilt)
+    implementation(libs.coil)
+    implementation(libs.coilNetwork)
     implementation(libs.icons)
-    implementation(libs.hiltCompiler)
-    implementation(libs.hiltCompose)
     implementation(libs.navigation)
+    implementation(libs.coilSvg)
     implementation(libs.retrofit)
     implementation(libs.retrofitGson)
 }
