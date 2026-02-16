@@ -1,4 +1,35 @@
 <resources>
     <string name="app_name">Countrypedia</string>
     <string name="name_home_txt">Jesús Ruiz</string>
+    <string name="countries_title_txt">Países</string>
+    <string name="capital_txt">Capital</string>
+    <string name="population_txt">Population</string>
+    <string name="area_txt">"Area: "</string>
+    <string name="region_txt">"Region: "</string>
+    <string name="subregion_txt">"Subregion: "</string>
+    <string name="try_again_txt">Try Again</string>
+    <string name="eduaction_txt">Education\n</string>
+    <string name="diploma_txt">Diploma In Programming and designing apps</string>
+    <string name="anahuac_university_txt">Anahuac University</string>
+    <string name="career_txt">Interactive and software Engineer</string>
+    <string name="grad_grade_txt">Graduate with 9.6 final grade</string>
+    <string name="unreal_echo_training_by_amber_m_xico_txt">Unreal Echo Training By Amber Mexico</string>
+    <string name="unreal_engine_course_txt">Unreal Engine Course</string>
+    <string name="relevante_experiences_txt">Relevant Experience\n</string>
+    <string name="Megacable_work">Megacable – Video and Research Engineer JR</string>
+    <string name="laundry_schedule_manager_txt">Laundry Schedule Manager</string>
+    <string name="jetpack_compose_app_note_txt">Jetpack Compose App Note</string>
+    <string name="hyper_casual_game_gun_run_published_on_playstore_txt"><![CDATA[Hyper-casual game Gun&Run)-Published on playStore]]></string>
+    <string name="sdk_google_play_services_implementation_txt">SDK google play services implementation</string>
+    <string name="programming_and_designing_gameplay_txt">Programming and Designing gameplay</string>
+    <string name="responsible_for_the_game_s_publication_on_the_play_store_txt">Responsible for the game\'s publication on the Play Store</string>
+    <string name="mega_experience_1">Developed a Python-based automation tool for performance report extraction and processing using Pandas, reducing manual analysis time by 300%.</string>
+    <string name="mega_experience_2">Managed video equipment and critical infrastructure monitoring for the xView service, ensuring high availability and system reliability</string>
+    <string name="mega_experience3">Supervised content flows within the xView CDN, ensuring seamless service delivery and scalability for a large-scale user base.\"</string>
+    <string name="smart_experience_1">Developed a full-featured Android application to manage laundry schedules in residential buildings.</string>
+    <string name="smart_experience_2">"Created a procedural schedule layout from scratch. "</string>
+    <string name="smart_wash_experience_3">Implemented authentication, a reservation system with overlap validation,  admin panel, and automations via Cloud Functions (weekly reset, hourly status updates).</string>
+    <string name="smartwash_experience_3">Built using MVVM architecture with Hilt, Jetpack Compose, and Firestore.</string>
+    <string name="note_experience_1">Developed a note-taking application with local persistence using Room (SQLite and MVVM architecture</string>
+    <string name="note_experience2">Allows users to create, edit, and delete notes through a modern Jetpack Compose interface</string>
 </resources>
