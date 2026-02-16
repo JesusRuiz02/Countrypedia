@@ -1,7 +1,7 @@
 package com.jesusruiz.countrypedia.di
 
 import com.jesusruiz.countrypedia.data.datsource.CountryRepository
-import com.jesusruiz.countrypedia.data.repository.LocalCountryRepository
+import com.jesusruiz.countrypedia.data.repository.ApiCountryRepositoryImplementation
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -15,6 +15,6 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
-    abstract fun bindCountryRepository(localCountryRepository: LocalCountryRepository
+    abstract fun bindCountryRepository(implementation: ApiCountryRepositoryImplementation
     ): CountryRepository
 }
