@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -12,6 +13,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,93 +33,93 @@ import androidx.compose.ui.unit.sp
 import com.jesusruiz.countrypedia.R
 import com.jesusruiz.countrypedia.ui.theme.CountrypediaTheme
 
+
 @Composable
 fun HeaderView(modifier: Modifier = Modifier){
     val uriHandler = LocalUriHandler.current
-    Row(modifier = modifier.fillMaxWidth()
-        .padding(5.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceEvenly) {
-        Image(modifier = Modifier
-            .height(200.dp)
-            .width(100.dp)
-            .padding(top = 50.dp, bottom = 20.dp) ,
-            painter = painterResource(id = R.drawable.profile_picture ),
-            contentDescription = "Profile Picture",
-        )
-        Column {
-            Row(verticalAlignment = Alignment.CenterVertically,
-            ){
-                Spacer(modifier = Modifier
-                    .height(10.dp)
-                    .width(30.dp)
-                    .background(Color.LightGray)
-                )
-                Column(horizontalAlignment = Alignment.Start) {
-                    Text(text = "Android Engineer", style = MaterialTheme.typography.bodySmall  )
-                    Text( text = stringResource(R.string.name_home_txt), style = MaterialTheme.typography.titleLarge, modifier = Modifier.padding(horizontal = 10.dp), fontWeight = FontWeight.Bold)
+    ElevatedCard (modifier = modifier
+        .fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ) ) {
+        Row(modifier = Modifier.fillMaxWidth()
+            .padding(15.dp),
+            verticalAlignment = Alignment.CenterVertically,) {
+            Image(modifier = Modifier
+                .height(110.dp)
+                .width(80.dp),
+                painter = painterResource(id = R.drawable.profile_picture ),
+                contentDescription = null,
+            )
+            Spacer(modifier = Modifier.width(12.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Row(verticalAlignment = Alignment.CenterVertically,
+                ){
+                    Box(modifier = Modifier
+                        .width(20.dp)
+                        .height(1.5.dp)
+                        .background(Color.LightGray))
+                    Column(modifier = Modifier.padding(horizontal = 8.dp).weight(1f)) {
+                        Text(text = "Android Engineer", style = MaterialTheme.typography.labelSmall  )
+                        Text( text = stringResource(R.string.name_home_txt)
+                            , style = MaterialTheme.typography.titleMedium
+                            ,  fontWeight = FontWeight.Bold,
+                            maxLines = 1)
+                    }
+                    Box(modifier = Modifier
+                        .height(50.dp)
+                        .width(1.5.dp)
+                        .background(Color.LightGray))
+                    Column(modifier = Modifier.padding(start = 8.dp)){
+                        Text(text = "Contact Info", style = MaterialTheme.typography.labelSmall, fontWeight = FontWeight.Bold  )
+                        Text( text = "jesruizman@gmail.com", style = TextStyle(fontSize = 9.sp), color = Color.Gray)
+                        Text(text = "+526121586629", style = TextStyle(fontSize = 10.sp), color = Color.Gray)
+                    }
                 }
-                Spacer(modifier = Modifier
-                    .padding(horizontal = 10.dp)
-                    .height(100.dp)
-                    .width(1.5.dp)
-                    .background(Color.LightGray))
-                Column(horizontalAlignment =  Alignment.Start){
-                    Text(text = "Contact Info",
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.Bold  )
-                    Text( text = "jesruizman@gmail.com",
-                        style = TextStyle(
-                            fontSize = 9.sp
-                        ),
-                        modifier = Modifier.padding(horizontal = 10.dp),color = Color.Gray)
-                    Text(text = "+526121586629", style = TextStyle(
-                        fontSize = 12.sp
-                    ),
-                        color = Color.Gray)
-                }
-            }
-            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(top = 10.dp)){
-               Spacer(modifier = Modifier
-                   .height(2.dp)
-                   .width(20.dp)
-                   .background(Color.Gray))
-               Image(modifier = Modifier
-                   .size(20.dp)
-                   .padding(5.dp),
-                   painter = painterResource(id = R.drawable.ic_linkedin),
-                   contentDescription = "Linkedin Icon"
-                   )
-               Text(
-                   modifier = Modifier.clickable{
-                       uriHandler.openUri("https://www.linkedin.com/in/jesus-ru1z-20-08-02-lmm/")
-                   },
-                   text = "jesus-ru1z-20-08-02-lmm",
-                   style = TextStyle(
-                        fontSize = 12.sp
-                   )
-               )
-                Image(modifier = Modifier
-                    .size(20.dp)
-                    .padding(horizontal = 10.dp),
-                    painter = painterResource(id = R.drawable.ic_launcher_background),
-                    contentDescription = "Github Icon"
-                )
-                Text(
-                    modifier = Modifier.clickable{
-                        uriHandler.openUri("https://github.com/JesusRuiz02") },
-                    text = "JesusRuiz02",
-                    style = TextStyle(
-                        fontSize = 12.sp
+                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)){
+                    Spacer(modifier = Modifier
+                        .height(2.dp)
+                        .width(20.dp)
+                        .background(Color.Gray))
+                    Image(modifier = Modifier
+                        .size(20.dp)
+                        .padding(5.dp),
+                        painter = painterResource(id = R.drawable.ic_linkedin),
+                        contentDescription = "Linkedin Icon"
                     )
-                )
-                Spacer(modifier = Modifier
-                    .height(2.dp)
-                    .padding(start = 5.dp)
-                    .width(20.dp)
-                    .background(Color.Gray))
+                    Text(
+                        modifier = Modifier.clickable{
+                            uriHandler.openUri("https://www.linkedin.com/in/jesus-ru1z-20-08-02-lmm/")
+                        },
+                        text = "jesus-ru1z-20-08-02-lmm",
+                        style = TextStyle(
+                            fontSize = 12.sp
+                        )
+                    )
+                    Image(modifier = Modifier
+                        .size(10.dp),
+                        painter = painterResource(id = R.drawable.ic_git),
+                        contentDescription = "Github Icon"
+                    )
+                    Text(
+                        modifier = Modifier.clickable{
+                            uriHandler.openUri("https://github.com/JesusRuiz02") },
+                        text = "JesusRuiz02",
+                        style = TextStyle(
+                            fontSize = 12.sp
+                        )
+                    )
+                    Spacer(modifier = Modifier
+                        .height(2.dp)
+                        .padding(start = 5.dp)
+                        .width(20.dp)
+                        .background(Color.Gray))
 
+                }
             }
+
         }
 
     }

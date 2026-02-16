@@ -15,12 +15,12 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun DescriptionItem(modifier: Modifier = Modifier, description: String = "description"){
-    Row(modifier = modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+    Row(modifier = modifier.fillMaxWidth().padding(horizontal = 10.dp), verticalAlignment = Alignment.CenterVertically) {
         Icon(modifier = Modifier
-            .size(20.dp)
-            .padding(5.dp),
+            .size(15.dp)
+            .padding(start = 0.dp, end = 5.dp, top = 5.dp, bottom = 5.dp ),
             imageVector = Icons.Default.Circle,
-            contentDescription = "Linkedin Icon"
+            contentDescription = "Description"
         )
         Text(text = description, modifier = Modifier.padding(horizontal = 5.dp))
     }
