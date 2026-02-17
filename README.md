@@ -17,8 +17,8 @@ Tech Stack:
 -Architecture: MVVM with repostory pattern
 -Dependency Injection: Hilt
 
-<img width="640" height="1428" alt="Image" src="https://github.com/user-attachments/assets/b5f87164-5e42-46f1-b05e-b2f0bb9385e3" />
-<img width="640" height="1428" alt="Image" src="https://github.com/user-attachments/assets/8ae1e388-af84-468b-b7dd-2982be4e8977" />
+<img width="320" height="714" alt="Image" src="https://github.com/user-attachments/assets/b5f87164-5e42-46f1-b05e-b2f0bb9385e3" />
+<img width="320" height="714" alt="Image" src="https://github.com/user-attachments/assets/8ae1e388-af84-468b-b7dd-2982be4e8977" />
 
 
 
