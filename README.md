@@ -9,6 +9,8 @@ Features:
 -Animations: Animations integrated to get a better UX for the user
 -Error Handling: Graceful handling of network failures and empty states.
 
+
+
 Tech Stack:
 -Language: Kotlin
 -Framework: Jetpack Compose Material 3
