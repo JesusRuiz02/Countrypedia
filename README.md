@@ -9,7 +9,7 @@ Features:
 -Animations: Animations integrated to get a better UX for the user
 -Error Handling: Graceful handling of network failures and empty states.
 
-
+Screenshots/sc_01.png
 
 Tech Stack:
 -Language: Kotlin
