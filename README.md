@@ -9,8 +9,6 @@ Features:
 -Animations: Animations integrated to get a better UX for the user
 -Error Handling: Graceful handling of network failures and empty states.
 
-Screenshots/sc_01.png
-
 Tech Stack:
 -Language: Kotlin
 -Framework: Jetpack Compose Material 3
@@ -18,6 +16,8 @@ Tech Stack:
 -Asynchronous loader image: COIL
 -Architecture: MVVM with repostory pattern
 -Dependency Injection: Hilt
+
+<img width="640" height="1428" alt="Image" src="https://github.com/user-attachments/assets/b5f87164-5e42-46f1-b05e-b2f0bb9385e3" />
 
 
 
