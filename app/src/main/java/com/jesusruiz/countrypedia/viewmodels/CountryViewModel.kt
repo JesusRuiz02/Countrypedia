@@ -1,5 +1,6 @@
 package com.jesusruiz.countrypedia.viewmodels
 
+import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -79,6 +80,7 @@ class CountryViewModel @Inject constructor(
                     _countryDataState.value = _countryDataState.value.copy(country =  result.data, countryUI = UI_STATE.READY, countriesList = countryList)
                 }
                 is Result.Error -> {
+                    Log.d("Error", "${result.message } : ${result.exception}")
                     _countryDataState.value = _countryDataState.value.copy(countryUI = UI_STATE.FAILED)
 
                 }

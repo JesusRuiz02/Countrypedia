@@ -38,7 +38,7 @@ fun CurriculumView(navController: NavController){
     val principalModifier = Modifier
     LaunchedEffect(Unit) { visible.value = true }
     Column(horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(12.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
             modifier = principalModifier
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())

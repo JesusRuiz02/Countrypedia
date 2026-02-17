@@ -18,12 +18,12 @@ class ApiCountryRepositoryImplementation @Inject constructor(
                 val countryDto = response[0]
                 Result.Success(countryDto.toDomain())
             }else{
-                Result.Error(0)
+                Result.Error("El response esta vacio")
             }
         }
         catch (e: Exception){
             Log.d("error", e.toString())
-            Result.Error(0, e)
+            Result.Error("Ha ocurrido un error con la API", e)
         }
     }
 

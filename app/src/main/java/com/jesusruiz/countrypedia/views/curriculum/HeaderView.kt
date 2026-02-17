@@ -96,7 +96,9 @@ fun HeaderView(modifier: Modifier = Modifier){
                         text = "jesus-ru1z-20-08-02-lmm",
                         style = TextStyle(
                             fontSize = 12.sp
-                        )
+                        ),
+                        maxLines = 1
+
                     )
                     Image(modifier = Modifier
                         .size(10.dp),
@@ -109,7 +111,8 @@ fun HeaderView(modifier: Modifier = Modifier){
                         text = "JesusRuiz02",
                         style = TextStyle(
                             fontSize = 12.sp
-                        )
+                        ),
+                        maxLines = 1
                     )
                     Spacer(modifier = Modifier
                         .height(2.dp)

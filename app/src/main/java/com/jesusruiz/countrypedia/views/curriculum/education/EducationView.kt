@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
@@ -35,16 +36,19 @@ fun EducationView(modifier: Modifier = Modifier){
             containerColor = MaterialTheme.colorScheme.surface
         ),
         shape = RoundedCornerShape(16.dp)) {
-        Column(modifier = modifier.padding(10.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
+        Column(modifier = modifier.padding(start = 10.dp, top = 10.dp)) {
+            Row(verticalAlignment = Alignment.Bottom, modifier = Modifier.padding(top = 10.dp)) {
                 Text(
                     stringResource(R.string.eduaction_txt),
-                    modifier = Modifier.padding(vertical = 10.dp, horizontal = 10.dp),
+                    modifier = Modifier
+                        .padding( horizontal = 10.dp)
+                        .alignByBaseline(),
                     style = MaterialTheme.typography.titleMedium)
                 Icon(painter = painterResource(R.drawable.ic_school),
-                    contentDescription = null)
+                    contentDescription = null, modifier = Modifier
+                        .size(20.dp).alignByBaseline()
+                )
             }
-
             Box(modifier
                 .fillMaxWidth()
                 .height(1.5.dp)
@@ -62,7 +66,7 @@ fun EducationView(modifier: Modifier = Modifier){
                 .height(1.5.dp)
                 .background(Color.DarkGray))
             ExperienceItem(modifier = Modifier.padding(vertical = 5.dp), jobTitle = stringResource(R.string.unreal_echo_training_by_amber_m_xico_txt),
-                date = "2021-2022", jobDescription = listOf(stringResource(R.string.unreal_engine_course_txt)))
+                date = "2021-2022", jobDescription = listOf(stringResource(R.string.unreal_engine_course_txt)), initialValue = false)
         }
     }
 

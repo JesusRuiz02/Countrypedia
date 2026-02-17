@@ -1,12 +1,15 @@
 package com.jesusruiz.countrypedia.views.curriculum.jobExperience
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
@@ -19,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.unit.dp
 import com.jesusruiz.countrypedia.R
 
@@ -27,21 +31,23 @@ fun ExperienceView(modifier: Modifier = Modifier){
 
     ElevatedCard (modifier = modifier
         .fillMaxWidth()
-        .padding(vertical = 12.dp),
+        .padding(vertical = 6.dp),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface
         )) {
-        Column(modifier = modifier.padding(10.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
+        Column(modifier = modifier.padding(start = 10.dp,top = 10.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(start = 10.dp, top = 10.dp), horizontalArrangement = Arrangement.spacedBy(5.dp)) {
                 Text(
                     stringResource(R.string.relevante_experiences_txt),
-                    modifier = Modifier.padding(vertical = 10.dp, horizontal = 10.dp),
-                    style = MaterialTheme.typography.titleMedium)
+                    modifier = Modifier,
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        platformStyle = PlatformTextStyle(includeFontPadding = false)
+                    ))
                 Icon(painter = painterResource(R.drawable.ic_work),
-                    contentDescription = null)
+                    contentDescription = null, modifier = Modifier.size(24.dp)
+                        .offset(y = (-12).dp))
             }
-
             Box(modifier
                 .fillMaxWidth()
                 .height(1.5.dp)
@@ -49,7 +55,6 @@ fun ExperienceView(modifier: Modifier = Modifier){
             val megacableExperience: List<String> = listOf(
                 stringResource(R.string.mega_experience_1),
                 stringResource(R.string.mega_experience_2),
-                stringResource(R.string.mega_experience3)
             )
             val smartWashExperience: List<String> = listOf(
                 stringResource(R.string.smart_experience_1),
@@ -68,7 +73,7 @@ fun ExperienceView(modifier: Modifier = Modifier){
                 stringResource(R.string.responsible_for_the_game_s_publication_on_the_play_store_txt)
             )
             ExperienceItem(modifier = Modifier.padding(vertical = 5.dp), jobTitle = stringResource(R.string.Megacable_work),
-                date = "may 2025 - now", jobDescription = megacableExperience )
+                date = "2025 - now", jobDescription = megacableExperience )
             Box(modifier
                 .fillMaxWidth()
                 .height(1.5.dp)

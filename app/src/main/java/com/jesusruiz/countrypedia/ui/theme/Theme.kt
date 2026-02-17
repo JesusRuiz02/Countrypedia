@@ -15,16 +15,16 @@ private val DarkColorScheme = darkColorScheme(
     surface = Taupe,
     onSurface = Parchment ,
     background = JetBlack,
-    secondary = PurpleGrey80,
+    secondary = blue,
     tertiary = Pink80
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    surface = Parchment,
+    primary = indigo,
+    surface = white,
     onSurface = CarbonBlack ,
     background = LightBlue,
-    secondary = PurpleGrey80,
+    secondary = blue,
     tertiary = Pink80
 
     /* Other default colors to override
@@ -48,11 +48,11 @@ fun CountrypediaTheme(
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+            if (darkTheme) dynamicDarkColorScheme(context) else dynamicDarkColorScheme(context)
         }
 
         darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        else -> DarkColorScheme
     }
 
     MaterialTheme(
