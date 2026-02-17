@@ -1,7 +1,7 @@
-📱#Countrypedia
+📱Countrypedia
 
 
-##A modern android App created with "Jetpack Compose" and Clean Architecture (MVVM, HILT, MODULE AND REPOSITORIES) this project shows my Curriculum Vitae and a little countrypedia using RESCOUNTRIES API
+A modern android App created with "Jetpack Compose" and Clean Architecture (MVVM, HILT, MODULE AND REPOSITORIES) this project shows my Curriculum Vitae and a little countrypedia using RESCOUNTRIES API
 
 Features:
 -State Management: Using Shimmer Effect to provide the maximum USER EXPERIENCE
